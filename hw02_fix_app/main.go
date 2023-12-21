@@ -21,9 +21,10 @@ func main() {
 		path = "data.json"
 	}
 
-	staff, err = reader.ReadJSON(path)
+	staff, err = reader.ReadJSON(path, -1)
 
-	fmt.Print(err)
-
+	if err != nil {
+		fmt.Print(err)
+	}
 	printer.PrintStaff(staff)
 }
